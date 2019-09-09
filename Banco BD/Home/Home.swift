@@ -10,7 +10,6 @@ import UIKit
 class Home: UIViewController{
     
     
-
     
     let homeView:viewHome = viewHome()
     

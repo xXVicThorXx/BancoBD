@@ -50,6 +50,15 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
         viewX.leadingAnchor.constraint(equalTo: labelSaludo.leadingAnchor).isActive = true
         viewX.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2).isActive = true
        
+        self.addSubview(toolbarHome)
+        
+        toolbarHome.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        toolbarHome.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        toolbarHome.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        toolbarHome.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier:  0.06).isActive = true
+        
+        let botones:[UIBarButtonItem] = [btnHome,btnTransferencia]
+        toolbarHome.items = botones
         
         //TABLE VIEW
         self.addSubview(tableViewCuentas)
@@ -57,11 +66,15 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
         tableViewCuentas.topAnchor.constraint(equalTo: viewX.bottomAnchor, constant: 10).isActive = true
         tableViewCuentas.leadingAnchor.constraint(equalTo: labelSaludo.leadingAnchor).isActive = true
         tableViewCuentas.trailingAnchor.constraint(equalTo: labelSaludo.trailingAnchor).isActive = true
-        tableViewCuentas.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2).isActive = true
+        tableViewCuentas.bottomAnchor.constraint(equalTo: toolbarHome.topAnchor, constant: -10).isActive = true
         
         tableViewCuentas.dataSource = self
         tableViewCuentas.delegate = self
-    
+        
+
+        //        NOTA: limpiar fondo table view en viewwillapear
+        
+        
         
     }
     
@@ -69,12 +82,13 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return 5
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tableViewCuentas.dequeueReusableCell(withIdentifier: "celdaCustomCuentas") as! celdaCuentas
-    
+       
 
         return celda
     }
@@ -116,9 +130,43 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
     let tableViewCuentas: UITableView = {
         let tableView = UITableView()
         
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    
+    let toolbarHome:UIToolbar = {
+       let toolbar = UIToolbar()
+        
+        
+        toolbar.translatesAutoresizingMaskIntoConstraints = false
+        return toolbar
+    }()
+    
+    let btnHome:UIBarButtonItem = {
+        let btn = UIBarButtonItem(image: UIImage(named: "homeImage"), style: .plain, target: self, action: #selector(funcionBtnHome))
+        return btn
+        
+    }()
+    
+    let btnTransferencia:UIBarButtonItem = {
+        let btn = UIBarButtonItem(image: UIImage(named: "transferencia"), style: .plain, target: self, action: #selector(funcionBtnTransferencia))
+        return btn
+        
+    }()
+    
+    
+    @objc func funcionBtnHome(){
+        print("HOME")
+        
+    }
+    
+    @objc func funcionBtnTransferencia(){
+        print("TRANSFERENCIA")
+        
+    }
+    
+    
     
     
 }

@@ -19,7 +19,7 @@ class celdaCuentas: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = .blue
+        self.backgroundColor = .clear
         
         self.addSubview(imgViewCuenta)
         imgViewCuenta.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5).isActive = true
@@ -29,6 +29,8 @@ class celdaCuentas: UITableViewCell {
         
         let view1 = UIView()
         let view2 = UIView()
+        view1.backgroundColor = .clear
+        view2.backgroundColor = .clear
         view1.translatesAutoresizingMaskIntoConstraints = false
         view2.translatesAutoresizingMaskIntoConstraints = false
         view1.addSubview(lblNombreCuenta)
@@ -78,7 +80,7 @@ class celdaCuentas: UITableViewCell {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "visa")
         imageView.contentMode = .scaleAspectFit
-        
+        imageView.backgroundColor = .clear
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -86,7 +88,7 @@ class celdaCuentas: UITableViewCell {
     let lblNombreCuenta: UILabel = {
         let label = UILabel()
         label.text = ""
-        label.backgroundColor = .blue
+        label.backgroundColor = .clear
         
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -95,7 +97,7 @@ class celdaCuentas: UITableViewCell {
     let lblNoCuenta: UILabel = {
         let label = UILabel()
         label.text = ""
-        label.backgroundColor = .blue
+        label.backgroundColor = .clear
         
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

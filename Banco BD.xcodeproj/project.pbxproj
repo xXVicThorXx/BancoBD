@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71AFB1B92326E07D00173DAF /* AccesToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFB1B22326E07D00173DAF /* AccesToken.swift */; };
+		71AFB1BA2326E07D00173DAF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFB1B32326E07D00173DAF /* User.swift */; };
+		71AFB1BB2326E07D00173DAF /* LoginStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFB1B42326E07D00173DAF /* LoginStruct.swift */; };
+		71AFB1BC2326E07D00173DAF /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFB1B52326E07D00173DAF /* Transaction.swift */; };
+		71AFB1BD2326E07D00173DAF /* Acount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFB1B62326E07D00173DAF /* Acount.swift */; };
+		71AFB1BE2326E07D00173DAF /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFB1B82326E07D00173DAF /* Connection.swift */; };
 		F1D7BA6C2315BD7D003A95E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D7BA6B2315BD7D003A95E6 /* AppDelegate.swift */; };
 		F1D7BA6E2315BD7D003A95E6 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D7BA6D2315BD7D003A95E6 /* Login.swift */; };
 		F1D7BA712315BD7D003A95E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D7BA6F2315BD7D003A95E6 /* Main.storyboard */; };
@@ -23,6 +29,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71AFB1B22326E07D00173DAF /* AccesToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccesToken.swift; sourceTree = "<group>"; };
+		71AFB1B32326E07D00173DAF /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		71AFB1B42326E07D00173DAF /* LoginStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginStruct.swift; sourceTree = "<group>"; };
+		71AFB1B52326E07D00173DAF /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		71AFB1B62326E07D00173DAF /* Acount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Acount.swift; sourceTree = "<group>"; };
+		71AFB1B82326E07D00173DAF /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		827EABFA87700A3DFB1EFB7C /* Pods-Banco BD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banco BD.debug.xcconfig"; path = "Target Support Files/Pods-Banco BD/Pods-Banco BD.debug.xcconfig"; sourceTree = "<group>"; };
 		C3DE0FDE273A47262A182598 /* Pods-Banco BD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banco BD.release.xcconfig"; path = "Target Support Files/Pods-Banco BD/Pods-Banco BD.release.xcconfig"; sourceTree = "<group>"; };
 		F1D7BA682315BD7D003A95E6 /* Banco BD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Banco BD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +66,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71AFB1B12326E07D00173DAF /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				71AFB1B22326E07D00173DAF /* AccesToken.swift */,
+				71AFB1B32326E07D00173DAF /* User.swift */,
+				71AFB1B42326E07D00173DAF /* LoginStruct.swift */,
+				71AFB1B52326E07D00173DAF /* Transaction.swift */,
+				71AFB1B62326E07D00173DAF /* Acount.swift */,
+			);
+			path = Structures;
+			sourceTree = "<group>";
+		};
+		71AFB1B72326E07D00173DAF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				71AFB1B82326E07D00173DAF /* Connection.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		D070EE1F041AC0E1A2B46F45 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +124,8 @@
 		F1D7BA6A2315BD7D003A95E6 /* Banco BD */ = {
 			isa = PBXGroup;
 			children = (
+				71AFB1B72326E07D00173DAF /* Service */,
+				71AFB1B12326E07D00173DAF /* Structures */,
 				F1D7BA6F2315BD7D003A95E6 /* Main.storyboard */,
 				F1D7BA6B2315BD7D003A95E6 /* AppDelegate.swift */,
 				F1E6FF272322E323003848F4 /* Home */,
@@ -258,10 +292,16 @@
 				F1D7BA6E2315BD7D003A95E6 /* Login.swift in Sources */,
 				F1DE3DF6231DCE1100185BA1 /* ViewLogin.swift in Sources */,
 				F1DE3DF8231DD2F100185BA1 /* ViewRegister.swift in Sources */,
+				71AFB1BD2326E07D00173DAF /* Acount.swift in Sources */,
+				71AFB1BC2326E07D00173DAF /* Transaction.swift in Sources */,
+				71AFB1BE2326E07D00173DAF /* Connection.swift in Sources */,
 				F1D7BA852315BF88003A95E6 /* Register.swift in Sources */,
 				F1D7BA6C2315BD7D003A95E6 /* AppDelegate.swift in Sources */,
 				F1E6FF2B2322E39D003848F4 /* Home.swift in Sources */,
 				F1E6FF292322E35E003848F4 /* viewHome.swift in Sources */,
+				71AFB1B92326E07D00173DAF /* AccesToken.swift in Sources */,
+				71AFB1BB2326E07D00173DAF /* LoginStruct.swift in Sources */,
+				71AFB1BA2326E07D00173DAF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

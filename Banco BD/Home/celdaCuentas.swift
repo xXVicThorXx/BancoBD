@@ -22,31 +22,61 @@ class celdaCuentas: UITableViewCell {
         self.backgroundColor = .blue
         
         self.addSubview(imgViewCuenta)
-        imgViewCuenta.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        imgViewCuenta.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        imgViewCuenta.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        imgViewCuenta.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5).isActive = true
         imgViewCuenta.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.8).isActive = true
         imgViewCuenta.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.2).isActive = true
-//        self.addSubview(lblNombreCuenta)
-//        lblNombreCuenta.topAnchor.constraint(equalTo: self.topAnchor, constant: -5).isActive = true
-//        lblNombreCuenta.leadingAnchor.constraint(equalTo: imgViewCuenta.trailingAnchor, constant: 5).isActive = true
-//        lblNombreCuenta.widthAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5).isActive = true
-//        lblNombreCuenta.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
+        imgViewCuenta.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        
+        let view1 = UIView()
+        let view2 = UIView()
+        view1.translatesAutoresizingMaskIntoConstraints = false
+        view2.translatesAutoresizingMaskIntoConstraints = false
+        view1.addSubview(lblNombreCuenta)
+        view2.addSubview(lblNoCuenta)
+        
+        lblNombreCuenta.topAnchor.constraint(equalTo: view1.topAnchor).isActive = true
+        lblNombreCuenta.trailingAnchor.constraint(equalTo: view1.trailingAnchor).isActive = true
+        lblNombreCuenta.leadingAnchor.constraint(equalTo: view1.leadingAnchor).isActive = true
+        lblNombreCuenta.bottomAnchor.constraint(equalTo: view1.bottomAnchor).isActive = true
+        
+        lblNoCuenta.topAnchor.constraint(equalTo: view2.topAnchor).isActive = true
+        lblNoCuenta.trailingAnchor.constraint(equalTo: view2.trailingAnchor).isActive = true
+        lblNoCuenta.leadingAnchor.constraint(equalTo: view2.leadingAnchor).isActive = true
+        lblNoCuenta.bottomAnchor.constraint(equalTo: view2.bottomAnchor).isActive = true
+        
+        let stackInfoTarjeta = UIStackView(arrangedSubviews: [view1,view2])
+        stackInfoTarjeta.translatesAutoresizingMaskIntoConstraints = false
+        stackInfoTarjeta.axis = .vertical
+        stackInfoTarjeta.spacing = 0
+        stackInfoTarjeta.distribution = .fillEqually
+
+        self.addSubview(stackInfoTarjeta)
+        
+        stackInfoTarjeta.leadingAnchor.constraint(equalTo: imgViewCuenta.trailingAnchor, constant: 5).isActive = true
+        stackInfoTarjeta.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
+        stackInfoTarjeta.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant:  -5).isActive = true
+        stackInfoTarjeta.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5).isActive = true
+        
+        
+        
+        
         
     }
     
-    var a:String?
+    var nombre:String = "NOMBRE APELLIDO"
+    var noCuenta:String = "XXXX XXXX XXXX XXXX"
     
     override func layoutSubviews() {
-//        super.layoutSubviews()
-//        if let a = a {
-//            lblNombreCuenta.text = String(a)
-//        }
+         super.layoutSubviews()
+        lblNombreCuenta.text = nombre
+        lblNoCuenta.text = noCuenta
+       
+        
     }
     
     let imgViewCuenta: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "banca")
+        imageView.image = UIImage(named: "visa")
         imageView.contentMode = .scaleAspectFit
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -55,12 +85,21 @@ class celdaCuentas: UITableViewCell {
     
     let lblNombreCuenta: UILabel = {
         let label = UILabel()
+        label.text = ""
         label.backgroundColor = .blue
         
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
+    let lblNoCuenta: UILabel = {
+        let label = UILabel()
+        label.text = ""
+        label.backgroundColor = .blue
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     
 }

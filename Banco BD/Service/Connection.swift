@@ -16,8 +16,10 @@ class Connection {
         let liga = URL(string: link)
         var request = URLRequest(url: liga!)
         request.httpMethod = "POST"
-        request.httpBody = try? JSONEncoder().encode(LoginPost(email: email,contraseña: password))
-        
+        let json = try? JSONEncoder().encode(LoginPost(email: email,contraseña: password))
+        let jsonBodyString = String(data: json!, encoding: .utf8)
+        print(jsonBodyString!)
+        request.httpBody = json
         let task = URLSession.shared.dataTask(with: request)
         { (Data, Res, Err) in
             if(Err != nil){
@@ -27,12 +29,12 @@ class Connection {
                 print("DATA\n\(data)")
                 do{
                     
-                    let json = try JSONDecoder().decode(AccessToken.self, from: data)
+                    let json = try JSONDecoder().decode([AccessToken].self, from: data)
                     
-                    print(json)
+                    print(json[0])
                     
-                }catch{
-                    print("Error:")
+                }catch let err{
+                    print(err)
                 }
             }
         }

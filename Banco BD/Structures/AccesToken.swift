@@ -9,5 +9,5 @@
 import Foundation
 
 struct AccessToken: Decodable {
-    var bearer:String
+    let Token:String
 }

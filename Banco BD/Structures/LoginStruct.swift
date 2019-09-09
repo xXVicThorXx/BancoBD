@@ -9,7 +9,7 @@
 import Foundation
 
 struct LoginPost: Codable {
-    var email:String
-    var contraseña:String
+    let email:String
+    let contraseña:String
 
 }

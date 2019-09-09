@@ -38,6 +38,11 @@ class Login: UIViewController {
     
     @objc func funcBtnLogin(){
         performSegue(withIdentifier: "segueHome", sender: nil)
+        
+        let email:String = self.viewLogin.textFieldCorreo.text!
+        let contraseña:String = self.viewLogin.textFieldContraseña.text!
+        
+        Connection.loginGetToken(email: email, password: contraseña)
     }
     
     @objc func funcBtnRegister(){

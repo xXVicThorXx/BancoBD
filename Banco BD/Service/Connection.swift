@@ -11,7 +11,7 @@ import Foundation
 
 class Connection {
     
-    func loginGetToken(email:String,password:String){
+    static func loginGetToken(email:String,password:String){
         let link = "http://18.218.255.127:3000/api/login"
         let liga = URL(string: link)
         var request = URLRequest(url: liga!)
@@ -21,9 +21,10 @@ class Connection {
         let task = URLSession.shared.dataTask(with: request)
         { (Data, Res, Err) in
             if(Err != nil){
-                print(Err!)
+                print("Error: \(Err!)")
             }else{
                 guard let data = Data else {return}
+                print("DATA\n\(data)")
                 do{
                     
                     let json = try JSONDecoder().decode(AccessToken.self, from: data)
@@ -31,7 +32,7 @@ class Connection {
                     print(json)
                     
                 }catch{
-                    
+                    print("Error:")
                 }
             }
         }

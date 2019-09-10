@@ -13,6 +13,9 @@
 		71AFB1BC2326E07D00173DAF /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFB1B52326E07D00173DAF /* Transaction.swift */; };
 		71AFB1BD2326E07D00173DAF /* Acount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFB1B62326E07D00173DAF /* Acount.swift */; };
 		71AFB1BE2326E07D00173DAF /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFB1B82326E07D00173DAF /* Connection.swift */; };
+		F188E6E12327E76B0028F2D7 /* ViewTransferencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = F188E6E02327E76B0028F2D7 /* ViewTransferencia.swift */; };
+		F188E6E32327EB0D0028F2D7 /* customViewCuenta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F188E6E22327EB0D0028F2D7 /* customViewCuenta.swift */; };
+		F188E6E52327EF110028F2D7 /* Transferencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = F188E6E42327EF110028F2D7 /* Transferencia.swift */; };
 		F1D7BA6C2315BD7D003A95E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D7BA6B2315BD7D003A95E6 /* AppDelegate.swift */; };
 		F1D7BA6E2315BD7D003A95E6 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D7BA6D2315BD7D003A95E6 /* Login.swift */; };
 		F1D7BA712315BD7D003A95E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D7BA6F2315BD7D003A95E6 /* Main.storyboard */; };
@@ -37,6 +40,9 @@
 		71AFB1B82326E07D00173DAF /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		827EABFA87700A3DFB1EFB7C /* Pods-Banco BD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banco BD.debug.xcconfig"; path = "Target Support Files/Pods-Banco BD/Pods-Banco BD.debug.xcconfig"; sourceTree = "<group>"; };
 		C3DE0FDE273A47262A182598 /* Pods-Banco BD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banco BD.release.xcconfig"; path = "Target Support Files/Pods-Banco BD/Pods-Banco BD.release.xcconfig"; sourceTree = "<group>"; };
+		F188E6E02327E76B0028F2D7 /* ViewTransferencia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTransferencia.swift; sourceTree = "<group>"; };
+		F188E6E22327EB0D0028F2D7 /* customViewCuenta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customViewCuenta.swift; sourceTree = "<group>"; };
+		F188E6E42327EF110028F2D7 /* Transferencia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transferencia.swift; sourceTree = "<group>"; };
 		F1D7BA682315BD7D003A95E6 /* Banco BD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Banco BD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D7BA6B2315BD7D003A95E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1D7BA6D2315BD7D003A95E6 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -103,6 +109,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F188E6DF2327E7000028F2D7 /* Transferencia */ = {
+			isa = PBXGroup;
+			children = (
+				F188E6E42327EF110028F2D7 /* Transferencia.swift */,
+				F188E6E02327E76B0028F2D7 /* ViewTransferencia.swift */,
+				F188E6E22327EB0D0028F2D7 /* customViewCuenta.swift */,
+			);
+			path = Transferencia;
+			sourceTree = "<group>";
+		};
 		F1D7BA5F2315BD7D003A95E6 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +145,7 @@
 				F1D7BA6F2315BD7D003A95E6 /* Main.storyboard */,
 				F1D7BA6B2315BD7D003A95E6 /* AppDelegate.swift */,
 				F1E6FF272322E323003848F4 /* Home */,
+				F188E6DF2327E7000028F2D7 /* Transferencia */,
 				F1D7BA812315BF3B003A95E6 /* Register */,
 				F1D7BA802315BE73003A95E6 /* Login */,
 				F1D7BA752315BD7E003A95E6 /* Assets.xcassets */,
@@ -289,9 +306,12 @@
 			files = (
 				F1E6FF2D23230B8B003848F4 /* celdaCuentas.swift in Sources */,
 				F1D7BA742315BD7D003A95E6 /* Banco_BD.xcdatamodeld in Sources */,
+				F188E6E12327E76B0028F2D7 /* ViewTransferencia.swift in Sources */,
 				F1D7BA6E2315BD7D003A95E6 /* Login.swift in Sources */,
+				F188E6E32327EB0D0028F2D7 /* customViewCuenta.swift in Sources */,
 				F1DE3DF6231DCE1100185BA1 /* ViewLogin.swift in Sources */,
 				F1DE3DF8231DD2F100185BA1 /* ViewRegister.swift in Sources */,
+				F188E6E52327EF110028F2D7 /* Transferencia.swift in Sources */,
 				71AFB1BD2326E07D00173DAF /* Acount.swift in Sources */,
 				71AFB1BC2326E07D00173DAF /* Transaction.swift in Sources */,
 				71AFB1BE2326E07D00173DAF /* Connection.swift in Sources */,

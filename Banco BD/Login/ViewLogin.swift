@@ -92,7 +92,7 @@ class ViewLogin: UIView {
         
         
         
-        btnEye.setImage(UIImage(named: "Open_Eye"), for: .normal)
+        btnEye.setImage(UIImage(named: "Closed_Eye"), for: .normal)
         
         viewContraseña.addSubview(btnEye)
         btnEye.centerYAnchor.constraint(equalTo: textFieldContraseña.centerYAnchor).isActive = true

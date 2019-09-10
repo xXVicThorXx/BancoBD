@@ -46,8 +46,8 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
         
         self.addSubview(viewX)
         viewX.topAnchor.constraint(equalTo: labelSaludo.bottomAnchor, constant: 10).isActive = true
-        viewX.trailingAnchor.constraint(equalTo: labelSaludo.trailingAnchor).isActive = true
-        viewX.leadingAnchor.constraint(equalTo: labelSaludo.leadingAnchor).isActive = true
+        viewX.trailingAnchor.constraint(equalTo: labelSaludo.trailingAnchor, constant: -5).isActive = true
+        viewX.leadingAnchor.constraint(equalTo: labelSaludo.leadingAnchor, constant: 5).isActive = true
         viewX.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2).isActive = true
        
         self.addSubview(toolbarHome)
@@ -73,6 +73,10 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
         
 
         //        NOTA: limpiar fondo table view en viewwillapear
+        
+        
+        
+        
         
         
         
@@ -121,7 +125,8 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
     
     let viewX:UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        
         
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -154,6 +159,29 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
         return btn
         
     }()
+    
+//
+//    let lblNombre: UILabel = {
+//        let label = UILabel()
+//        label.numberOfLines = 0
+//        //        label.backgroundColor = .white
+//        label.text = "NOMBRE APELLIDO"
+//        label.textAlignment = .center
+//
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        return label
+//    }()
+//
+//    let lblEdad: UILabel = {
+//        let label = UILabel()
+//        label.numberOfLines = 0
+//        //        label.backgroundColor = .white
+//        label.text = "EDAD: "
+//        label.textAlignment = .center
+//
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        return label
+//    }()
     
     
     @objc func funcionBtnHome(){

@@ -11,5 +11,10 @@ import Foundation
 struct LoginPost: Codable {
     let email:String
     let contraseña:String
+    
+    enum Codingkeys: String, CodingKey {
+        case email = "email"
+        case contraseña = "contraseña"
+    }
 
 }

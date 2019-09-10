@@ -12,18 +12,28 @@ import Foundation
 class Connection {
     
     static func loginGetToken(email:String,password:String){
-        let usuario = LoginPost(email: email,contraseña: password)
-        let json = try? JSONEncoder().encode(usuario)
-        let jsonBodyString = String(data: json!, encoding: .utf8)
-        print(jsonBodyString!)
-        print(json!)
+//        let usuario = LoginPost(email: email,contraseña: password)
+        
         
         let link = "http://18.218.255.127:3000/api/login"
         let liga = URL(string: link)
         var request = URLRequest(url: liga!)
+        let diccionario = ["email":"enrique@gmail.com","contraseña":"absc1234%"]
+        request.addValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.httpBody = jsonBodyString?.data(using: .utf8)
+        guard let body = try? JSONSerialization.data(withJSONObject: diccionario, options: []) else{return}
+        request.httpBody = body
+//        do{
+//            let json = try JSONEncoder().encode(usuario)
+//            request.httpBody = json
+//            let jsonBodyString = String(data: json, encoding: .utf8)
+//            print(jsonBodyString!)
+//        }catch let errJson{
+//            print(errJson)
+//        }
+//
+//
+//
         
         let task = URLSession.shared.dataTask(with: request)
         { (Data, Res, Err) in

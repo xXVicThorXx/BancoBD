@@ -1,16 +1,20 @@
 PODS:
+  - Alamofire (4.9.0)
   - FontAwesome.swift (1.8.2)
 
 DEPENDENCIES:
+  - Alamofire
   - FontAwesome.swift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - FontAwesome.swift
 
 SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   FontAwesome.swift: 7938d6a03113ff3f39001bde7f50be8a0903d605
 
-PODFILE CHECKSUM: 4d7812b17dbafc5221222439927eabd29d547aa7
+PODFILE CHECKSUM: f146f94bf6454cf0ecda89b3a6392df0895fa5d4
 
 COCOAPODS: 1.6.1

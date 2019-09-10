@@ -7,5 +7,6 @@ target 'Banco BD' do
 
   # Pods for Banco BD
 pod 'FontAwesome.swift'
+pod 'Alamofire'
 
 end

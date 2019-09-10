@@ -13,6 +13,7 @@
 		71AFB1BC2326E07D00173DAF /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFB1B52326E07D00173DAF /* Transaction.swift */; };
 		71AFB1BD2326E07D00173DAF /* Acount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFB1B62326E07D00173DAF /* Acount.swift */; };
 		71AFB1BE2326E07D00173DAF /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFB1B82326E07D00173DAF /* Connection.swift */; };
+		71CE09A023284FB00007B6AE /* AlertStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CE099F23284FB00007B6AE /* AlertStructure.swift */; };
 		F188E6E12327E76B0028F2D7 /* ViewTransferencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = F188E6E02327E76B0028F2D7 /* ViewTransferencia.swift */; };
 		F188E6E32327EB0D0028F2D7 /* customViewCuenta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F188E6E22327EB0D0028F2D7 /* customViewCuenta.swift */; };
 		F188E6E52327EF110028F2D7 /* Transferencia.swift in Sources */ = {isa = PBXBuildFile; fileRef = F188E6E42327EF110028F2D7 /* Transferencia.swift */; };
@@ -38,6 +39,7 @@
 		71AFB1B52326E07D00173DAF /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		71AFB1B62326E07D00173DAF /* Acount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Acount.swift; sourceTree = "<group>"; };
 		71AFB1B82326E07D00173DAF /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		71CE099F23284FB00007B6AE /* AlertStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStructure.swift; sourceTree = "<group>"; };
 		827EABFA87700A3DFB1EFB7C /* Pods-Banco BD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banco BD.debug.xcconfig"; path = "Target Support Files/Pods-Banco BD/Pods-Banco BD.debug.xcconfig"; sourceTree = "<group>"; };
 		C3DE0FDE273A47262A182598 /* Pods-Banco BD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banco BD.release.xcconfig"; path = "Target Support Files/Pods-Banco BD/Pods-Banco BD.release.xcconfig"; sourceTree = "<group>"; };
 		F188E6E02327E76B0028F2D7 /* ViewTransferencia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTransferencia.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				71AFB1B42326E07D00173DAF /* LoginStruct.swift */,
 				71AFB1B52326E07D00173DAF /* Transaction.swift */,
 				71AFB1B62326E07D00173DAF /* Acount.swift */,
+				71CE099F23284FB00007B6AE /* AlertStructure.swift */,
 			);
 			path = Structures;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				F1E6FF292322E35E003848F4 /* viewHome.swift in Sources */,
 				71AFB1B92326E07D00173DAF /* AccesToken.swift in Sources */,
 				71AFB1BB2326E07D00173DAF /* LoginStruct.swift in Sources */,
+				71CE09A023284FB00007B6AE /* AlertStructure.swift in Sources */,
 				71AFB1BA2326E07D00173DAF /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

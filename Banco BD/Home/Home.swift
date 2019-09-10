@@ -15,12 +15,23 @@ class Home: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.homeView.btnTransferencia.action = #selector(funcionBtnTransferencia)
         self.view = homeView
-        
+
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.homeView.tableViewCuentas.backgroundColor = .clear
     }
+    
+    
+    
+    @objc func funcionBtnTransferencia(){
+        performSegue(withIdentifier: "HomeSegueTransferencia", sender: nil)
+        
+        print("HOLII")
+    }
+    
+    
 }

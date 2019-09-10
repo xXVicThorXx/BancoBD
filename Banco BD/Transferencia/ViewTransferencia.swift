@@ -22,77 +22,64 @@ class ViewTransferencia: UIView {
     
     func setUpViews(){
         
-        let view1 = UIView()
-        let view2 = UIView()
-        view1.backgroundColor = .clear
-        view2.backgroundColor = .clear
-        view1.translatesAutoresizingMaskIntoConstraints = false
-        view2.translatesAutoresizingMaskIntoConstraints = false
-        view1.addSubview(btnCuenta1)
-        view2.addSubview(viewCuenta1)
+        self.addSubview(imgFondo)
         
-        let stackTarjeta1 = UIStackView(arrangedSubviews: [view1,view2])
-        stackTarjeta1.translatesAutoresizingMaskIntoConstraints = false
-        stackTarjeta1.axis = .horizontal
-        stackTarjeta1.spacing = 0
-        stackTarjeta1.distribution = .fillEqually
+        imgFondo.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        imgFondo.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        imgFondo.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        imgFondo.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
-        btnCuenta1.topAnchor.constraint(equalTo: view1.topAnchor, constant: 5).isActive = true
-        btnCuenta1.leadingAnchor.constraint(equalTo: view1.leadingAnchor, constant: 5).isActive = true
-        btnCuenta1.bottomAnchor.constraint(equalTo: view1.bottomAnchor, constant: -5).isActive = true
-        btnCuenta1.widthAnchor.constraint(equalTo: view1.widthAnchor, multiplier:  0.1).isActive = true
+        self.addSubview(viewCuenta1)
+        self.addSubview(viewCuenta2)
+        self.addSubview(viewCuenta3)
+        
+        viewCuenta1.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 5).isActive = true
+        viewCuenta1.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 5).isActive = true
+        viewCuenta1.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5).isActive = true
+        viewCuenta1.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3).isActive = true
+        
         
         
     }
     
-    let textFieldMonto: UITextField = {
-        let textField = UITextField()
+    
+    let imgFondo: UIImageView = {
+        let imgVIew = UIImageView()
+        imgVIew.image = UIImage(named: "fondoAzul")
+        imgVIew.contentMode = .scaleAspectFill
         
-        
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
+        imgVIew.translatesAutoresizingMaskIntoConstraints = false
+        return imgVIew
     }()
     
-    let btnCuenta1: UIButton = {
-        let boton = UIButton()
-        
-        
-        boton.translatesAutoresizingMaskIntoConstraints = false
-        return boton
-    }()
     
-    let btnCuenta2: UIButton = {
-        let boton = UIButton()
-        
-        
-        boton.translatesAutoresizingMaskIntoConstraints = false
-        return boton
-    }()
-    
-    let viewCuenta1: customViewCuenta = {
-        let view = customViewCuenta()
-        
+    let viewCuenta1:UIView = {
+        let view = UIView()
+        view.backgroundColor = .blue
         
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    let viewCuenta2: customViewCuenta = {
-        let view = customViewCuenta()
+    let viewCuenta2:UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
         
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let viewCuenta3:UIView = {
+        let view = UIView()
+        view.backgroundColor = .red
         
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     
-    let textFieldDescripcion: UITextField = {
-        let textField = UITextField()
-        
-        
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        return textField
-    }()
+   
+    
     
     
     

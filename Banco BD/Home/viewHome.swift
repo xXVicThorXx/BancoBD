@@ -57,7 +57,7 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
         toolbarHome.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         toolbarHome.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier:  0.06).isActive = true
         
-        let botones:[UIBarButtonItem] = [btnHome,btnTransferencia]
+        let botones:[UIBarButtonItem] = [btnTransferencia]
         toolbarHome.items = botones
         
         //TABLE VIEW
@@ -155,7 +155,7 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
     }()
     
     let btnTransferencia:UIBarButtonItem = {
-        let btn = UIBarButtonItem(image: UIImage(named: "transferencia"), style: .plain, target: self, action: #selector(funcionBtnTransferencia))
+        let btn = UIBarButtonItem(image: UIImage(named: "transferencia"), style: .plain, target: self, action: nil)
         return btn
         
     }()
@@ -189,10 +189,10 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
         
     }
     
-    @objc func funcionBtnTransferencia(){
-        print("TRANSFERENCIA")
-        
-    }
+//    @objc func funcionBtnTransferencia(){
+//        print("TRANSFERENCIA")
+//
+//    }
     
     
     

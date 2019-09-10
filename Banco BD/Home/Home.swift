@@ -17,5 +17,10 @@ class Home: UIViewController{
         super.viewDidLoad()
         self.view = homeView
         
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.homeView.tableViewCuentas.backgroundColor = .clear
     }
 }

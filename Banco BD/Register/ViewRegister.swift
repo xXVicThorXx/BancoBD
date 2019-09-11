@@ -358,8 +358,8 @@ class ViewRegister: UIView {
         
         let fecha = sender.calendar.dateComponents([.year, .month, .day], from: sender.date)
         
-        textFieldFechaNacimiento.text = formato.string(from: sender.date)
-        
+       // textFieldFechaNacimiento.text = formato.string(from: sender.date)
+        textFieldFechaNacimiento.text = " \(fecha.year!)-\(fecha.month!)-\(fecha.day!)"
         
         print("Año: \(fecha.year!)")
         print("Mes: \(fecha.month!)")

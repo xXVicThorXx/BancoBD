@@ -18,6 +18,13 @@ class Register: UIViewController {
         self.view = viewRegister
         setUpNavigationBar()
         self.hideKeyboardWhenTappedAround()
+        
+        viewRegister.btnRegistro.addTarget(self, action: #selector(register), for: .touchUpInside)
+        
+    }
+    @objc func register (){
+       Connection.registerApi(nombre: viewRegister.textFieldNombre.text!, apellido: viewRegister.textFieldApellido.text!, email: viewRegister.textFieldEmail.text!, contraseña: viewRegister.textFieldContraseña.text!,ConfiContra: viewRegister.textFieldConfirmarContraseña.text!, fecha_Nacimiento: viewRegister.textFieldFechaNacimiento.text!)
+        
 
     }
     

@@ -12,6 +12,7 @@ class Login: UIViewController {
 
     
     var viewLogin:ViewLogin = ViewLogin()
+    var connection:Connection = Connection()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,7 @@ class Login: UIViewController {
         let email:String = self.viewLogin.textFieldCorreo.text!
         let contraseña:String = self.viewLogin.textFieldContraseña.text!
         
-        Connection.loginGetToken(email: email, password: contraseña)
+        connection.loginGetToken(email: email, password: contraseña)
     }
     
     @objc func funcBtnRegister(){

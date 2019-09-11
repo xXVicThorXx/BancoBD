@@ -10,23 +10,24 @@ import Foundation
 import Alamofire
 
 class Connection {
-    static let loggin:String = "http://18.218.255.127:3000/api/login"
-    static let register:String = "http://18.218.255.127:3000/api/register"
-    static let acount:String = "http://18.218.255.127:3000/api/createAcount"
-    static let transaction:String = "http://18.218.255.127:3000/api/transaccion"
+     let loggin:String = "http://18.218.255.127:3000/api/login"
+     let register:String = "http://18.218.255.127:3000/api/register"
+     let acount:String = "http://18.218.255.127:3000/api/createAcount"
+     let transaction:String = "http://18.218.255.127:3000/api/transaccion"
+     let home:String = "http://18.218.255.127:3000/api/home"
+    let defaultUser = UserDefaults.standard
     
-    
-    static func loginGetToken(email:String,password:String){
+     func loginGetToken(email:String,password:String){
         let link = loggin
         let url = URL(string: link)!
-        var request = URLRequest(url: url)
-        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+//        var request = URLRequest(url: url)
+//        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         
         let body: HTTPHeaders = ["email" : email,
                                  "contraseña" : password]
         
-        guard let bodyEncoded = try? JSONSerialization.data(withJSONObject: body, options: []) else { return }
-        request.httpBody = bodyEncoded
+//        guard let bodyEncoded = try? JSONSerialization.data(withJSONObject: body, options: []) else { return }
+//        request.httpBody = bodyEncoded
         
         Alamofire.request(url, method: .post, parameters: body, encoding: JSONEncoding.default).responseJSON { (response) in
           
@@ -34,15 +35,16 @@ class Connection {
             if let data = response.data,
                 let token = try? JSONDecoder().decode(AccessToken.self, from: data) {
                 print("*** TOKEN (STRING): \(token.token)")
+                self.defaultUser.set(token.token, forKey: "accessToken")
             }
         }
     }
     
-    static func registerApi(nombre:String, apellido:String, email:String, contraseña:String,ConfiContra:String, fecha_Nacimiento:String){
+     func registerApi(nombre:String, apellido:String, email:String, contraseña:String, ConfiContra:String, fecha_Nacimiento:String){
         let link = register
         let url = URL(string: link)!
-        var request = URLRequest(url: url)
-        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-type")
+//        var request = URLRequest(url: url)
+//        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-type")
         let body:HTTPHeaders = [ "nombre": nombre , "apellido": apellido, "email":email, "contraseña":contraseña,"ConfiContra":ConfiContra, "fecha_Nacimiento": fecha_Nacimiento]
         
 //        guard let bodyEncode = try? JSONSerialization.data(withJSONObject: body, options: []) else { return }
@@ -61,5 +63,28 @@ class Connection {
         }
     }
     
+     func logginToHome(){
+        let link = home
+        let url = URL(string: link)!
+        if let token = defaultUser.value(forKey: "accessToken") {
+          let headers = [ "Authorization": "bearer \(token)" ]
+            
+            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON {(response) in
+                if let data = response.data,
+                    let cuenta = try? JSONDecoder().decode(User.self, from: data){
+                    print("sientra")
+                    print(cuenta.apellido)
+//                    let msg = String(data: data, encoding: .utf8)
+                    
+//                    print(msg!)
+                }
+                
+            }
+            
+        }
+        
+       
+        
+    }
 }
 

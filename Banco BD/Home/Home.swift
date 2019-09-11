@@ -12,11 +12,12 @@ class Home: UIViewController{
     
     
     let homeView:viewHome = viewHome()
+    let connection:Connection = Connection()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = homeView
-        
+        connection.logginToHome()
         
     }
     

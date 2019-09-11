@@ -14,6 +14,6 @@ struct User: Decodable{
     var email:String
     var contraseña:String
     var fecha_Nacimiento:String
-    var cuenta:Cuenta
+    var cuenta:[Cuenta]
     
 }

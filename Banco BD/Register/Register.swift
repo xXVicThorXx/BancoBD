@@ -23,7 +23,7 @@ class Register: UIViewController {
         
     }
     @objc func register (){
-       Connection.registerApi(nombre: viewRegister.textFieldNombre.text!, apellido: viewRegister.textFieldApellido.text!, email: viewRegister.textFieldEmail.text!, contraseña: viewRegister.textFieldContraseña.text!,ConfiContra: viewRegister.textFieldConfirmarContraseña.text!, fecha_Nacimiento: viewRegister.textFieldFechaNacimiento.text!)
+       Connection().registerApi(nombre: viewRegister.textFieldNombre.text!, apellido: viewRegister.textFieldApellido.text!, email: viewRegister.textFieldEmail.text!, contraseña: viewRegister.textFieldContraseña.text!,ConfiContra: viewRegister.textFieldConfirmarContraseña.text!, fecha_Nacimiento: viewRegister.textFieldFechaNacimiento.text!)
         
 
     }

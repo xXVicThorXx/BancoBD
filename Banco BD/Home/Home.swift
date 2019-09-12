@@ -12,6 +12,7 @@ class Home: UIViewController{
     
     
     let homeView:viewHome = viewHome()
+    let connection:Connection = Connection()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +20,7 @@ class Home: UIViewController{
         self.homeView.btnAñadirTarjeta.action = #selector(funcionBotonesToolbar)
         self.homeView.btnHistorial.action = #selector(funcionBotonesToolbar)
         self.view = homeView
-        
-       
+        connection.logginToHome()
         
     }
 

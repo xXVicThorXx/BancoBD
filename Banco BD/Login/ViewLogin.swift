@@ -99,9 +99,9 @@ class ViewLogin: UIView {
         btnEye.trailingAnchor.constraint(equalTo: textFieldContraseña.trailingAnchor, constant: -5).isActive = true
         btnEye.heightAnchor.constraint(equalTo: textFieldContraseña.heightAnchor, multiplier: 0.7).isActive = true
         btnEye.widthAnchor.constraint(equalTo: btnEye.heightAnchor).isActive = true
-        
         btnEye.addTarget(self, action: #selector(switchPassword), for: .touchUpInside)
         
+   
         
     }
     

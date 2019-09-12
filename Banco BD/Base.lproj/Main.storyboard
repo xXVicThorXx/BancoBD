@@ -20,10 +20,28 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Xay-3M-BuR"/>
                     </view>
+                    <connections>
+                        <segue destination="lhT-ja-j34" kind="show" identifier="HomeSegueTransferencia" id="kQn-WX-Orh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WF7-a4-0Lf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1912" y="-193"/>
+        </scene>
+        <!--Transferencia-->
+        <scene sceneID="AJd-5q-wio">
+            <objects>
+                <viewController id="lhT-ja-j34" customClass="Transferencia" customModule="Banco_BD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lhf-ne-LFy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ULc-9Q-nqH"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jtJ-Kz-xVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2827.536231884058" y="-194.19642857142856"/>
         </scene>
         <!--Login-->
         <scene sceneID="tne-QT-ifu">

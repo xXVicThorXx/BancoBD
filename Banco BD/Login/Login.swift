@@ -15,18 +15,18 @@ class Login: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view = viewLogin
         self.hideKeyboardWhenTappedAround()
+        self.view = viewLogin
+        
         viewLogin.btnRegistro.addTarget(self, action: #selector(funcBtnRegister), for: .touchUpInside)
         viewLogin.btnIniciarSesion.addTarget(self, action: #selector(funcBtnLogin), for: .touchUpInside)
 
         //  Obtener tamaño celular en pixeles
-        let screenSize: CGRect = UIScreen.main.bounds
-        let screenWidth = screenSize.width
-        let screenHeight = screenSize.height
+//        let screenSize: CGRect = UIScreen.main.bounds
+//        let screenWidth = screenSize.width
+//        let screenHeight = screenSize.height
         
-        print("Width: \(screenWidth) \nHeight: \(screenHeight)")
+        
       
     }
     
@@ -37,8 +37,9 @@ class Login: UIViewController {
 
     
     @objc func funcBtnLogin(){
-        performSegue(withIdentifier: "segueHome", sender: nil)
-        
+//        performSegue(withIdentifier: "segueHome", sender: nil)
+        let home = Home()
+        self.navigationController?.pushViewController(home, animated: true)
         let email:String = self.viewLogin.textFieldCorreo.text!
         let contraseña:String = self.viewLogin.textFieldContraseña.text!
         

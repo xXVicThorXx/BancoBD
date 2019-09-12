@@ -28,6 +28,7 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
     var screenHeight:CGFloat?
     
     func setUpViews(){
+        
         self.addSubview(imgFondo)
         imgFondo.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         imgFondo.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
@@ -57,7 +58,7 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
         toolbarHome.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         toolbarHome.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier:  0.06).isActive = true
         
-        let botones:[UIBarButtonItem] = [btnTransferencia]
+        let botones:[UIBarButtonItem] = [btnTransferencia,btnHistorial,btnAñadirTarjeta]
         toolbarHome.items = botones
         
         //TABLE VIEW
@@ -75,7 +76,12 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
         //        NOTA: limpiar fondo table view en viewwillapear
         
         
+        self.viewX.addSubview(btnAcercaDe)
         
+        btnAcercaDe.topAnchor.constraint(equalTo: viewX.topAnchor, constant: 5).isActive = true
+        btnAcercaDe.leadingAnchor.constraint(equalTo: viewX.leadingAnchor, constant: 5).isActive = true
+        btnAcercaDe.trailingAnchor.constraint(equalTo: viewX.trailingAnchor, constant: -5).isActive = true
+        btnAcercaDe.bottomAnchor.constraint(equalTo: viewX.bottomAnchor, constant: -5).isActive = true
         
         
         
@@ -148,51 +154,42 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
         return toolbar
     }()
     
-    let btnHome:UIBarButtonItem = {
-        let btn = UIBarButtonItem(image: UIImage(named: "homeImage"), style: .plain, target: self, action: #selector(funcionBtnHome))
+    let btnHistorial:UIBarButtonItem = {
+        let btn = UIBarButtonItem(image: UIImage(named: "historial"), style: .plain, target: self, action: nil)
+        btn.tag = 2
         return btn
         
     }()
     
     let btnTransferencia:UIBarButtonItem = {
         let btn = UIBarButtonItem(image: UIImage(named: "transferencia"), style: .plain, target: self, action: nil)
+        btn.tag = 1
         return btn
         
     }()
     
-//
-//    let lblNombre: UILabel = {
-//        let label = UILabel()
-//        label.numberOfLines = 0
-//        //        label.backgroundColor = .white
-//        label.text = "NOMBRE APELLIDO"
-//        label.textAlignment = .center
-//
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        return label
-//    }()
-//
-//    let lblEdad: UILabel = {
-//        let label = UILabel()
-//        label.numberOfLines = 0
-//        //        label.backgroundColor = .white
-//        label.text = "EDAD: "
-//        label.textAlignment = .center
-//
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        return label
-//    }()
-    
-    
-    @objc func funcionBtnHome(){
-        print("HOME")
+    let btnAñadirTarjeta:UIBarButtonItem = {
+        let btn = UIBarButtonItem(image: UIImage(named: "creditCard"), style: .plain, target: self, action: nil)
+       btn.tag = 3
+        return btn
         
-    }
+    }()
     
-//    @objc func funcionBtnTransferencia(){
-//        print("TRANSFERENCIA")
-//
-//    }
+    
+
+    let btnAcercaDe:UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setTitle("Acerca De", for: .normal)
+        btn.titleLabel?.font = UIFont(name: "Arial", size: 20)
+        //        btn.layer.cornerRadius = 10
+        //        btn.layer.borderWidth = 0.5
+        //        btn.layer.borderColor = UIColor.lightGray.cgColor
+        btn.backgroundColor = .black
+        
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        return btn
+        
+    }()
     
     
     

@@ -21,6 +21,7 @@ class Home: UIViewController{
         self.homeView.btnHistorial.action = #selector(funcionBotonesToolbar)
         self.view = homeView
         connection.logginToHome()
+        self.navigationItem.title = "BANCO"
         
     }
 

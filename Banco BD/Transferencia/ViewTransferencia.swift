@@ -13,6 +13,7 @@ class ViewTransferencia: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUpViews()
+        
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -140,6 +141,13 @@ class ViewTransferencia: UIView {
         labelCuenta2.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5).isActive = true
         labelCuenta2.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.07)
         
+        viewMonto.addSubview(textFieldMonto)
+        
+        textFieldMonto.centerXAnchor.constraint(equalTo: viewMonto.centerXAnchor).isActive = true
+        textFieldMonto.centerYAnchor.constraint(equalTo: viewMonto.centerYAnchor).isActive = true
+        textFieldMonto.widthAnchor.constraint(equalTo: viewMonto.widthAnchor, multiplier: 0.7).isActive = true
+        textFieldMonto.heightAnchor.constraint(equalTo: viewMonto.heightAnchor, multiplier: 0.5).isActive = true
+        
         
     }
     
@@ -165,7 +173,7 @@ class ViewTransferencia: UIView {
     
     let viewMonto:UIView = {
         let view = UIView()
-        view.backgroundColor = .red
+//        view.backgroundColor = .red
         
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -264,6 +272,16 @@ class ViewTransferencia: UIView {
         return label
     }()
    
+    let textFieldMonto:UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Ingresa la Cantidad a Transferir"
+        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.gray.cgColor
+        textField.layer.cornerRadius = 10
+        textField.textAlignment = .center
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
     
     
 }

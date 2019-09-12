@@ -11,11 +11,11 @@ import UIKit
 class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
     
     
-    
+     let connection:Connection = Connection()
     override init(frame: CGRect) {
         super.init(frame: frame)
        setUpViews()
-        
+        connection.logginToHome()
     }
     
     

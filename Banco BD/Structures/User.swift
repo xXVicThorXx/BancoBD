@@ -8,12 +8,11 @@
 
 import Foundation
 
-struct User: Decodable{
+struct User: Codable{
     var nombre:String
     var apellido:String
     var email:String
     var contraseña:String
     var fecha_Nacimiento:String
-    var cuenta:[Cuenta]
     
 }

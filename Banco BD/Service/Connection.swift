@@ -35,7 +35,15 @@ class Connection {
             if let data = response.data,
                 let token = try? JSONDecoder().decode(AccessToken.self, from: data) {
                 print("*** TOKEN (STRING): \(token.token)")
-                self.defaultUser.set(token.token, forKey: "accessToken")
+                //update token in user defaults
+                
+                if self.defaultUser.value(forKey: "accessToken") == nil{
+                     self.defaultUser.set(token.token, forKey: "accessToken")
+                }else{
+                    self.defaultUser.removeObject(forKey: "accessToken")
+                    self.defaultUser.set(token.token, forKey: "accessToken")
+                }
+                
             }
         }
     }
@@ -70,10 +78,11 @@ class Connection {
           let headers = [ "Authorization": "bearer \(token)" ]
             
             Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON {(response) in
-                if let data = response.data,
-                    let cuenta = try? JSONDecoder().decode(User.self, from: data){
+                if let data = response.data {
+//                    let msg = String(data: data, encoding: .utf8)
                     print("sientra")
-                    print(cuenta.apellido)
+                    let cuenta = try? JSONDecoder().decode(User.self, from: data)
+                    print(cuenta!)
 //                    let msg = String(data: data, encoding: .utf8)
                     
 //                    print(msg!)
@@ -88,3 +97,5 @@ class Connection {
     }
 }
 
+//,
+//et cuenta = try? JSONDecoder().decode(User.self, from: data)

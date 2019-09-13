@@ -45,6 +45,7 @@ class Login: UIViewController {
         let contraseña:String = self.viewLogin.textFieldContraseña.text!
         
         connection.loginGetToken(email: email, password: contraseña)
+//        connection.loadAcounts()
     }
     
     @objc func funcBtnRegister(){

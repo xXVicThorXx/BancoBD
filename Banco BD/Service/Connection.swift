@@ -92,25 +92,25 @@ class Connection {
 //        }
 //    }
     
-    func loadAcounts() -> Cuenta{
+    func loadAcounts() /*-> Cuenta*/{
         
-        var account = Cuenta(id_noCuenta: "", id_usuario: 0, saldo: 0, tipo: 0)
+//        var account = Cuenta(id_noCuenta: "", id_usuario: 0, saldo: 0, tipo: 0)
         
         let link = acount
         let url = URL(string: link)!
         if let token = defaultUser.value(forKey: "accessToken"){
             let headers = [ "Authorization": "bearer \(token)" ]
             Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
-                if let data = response.data, let acount = try? JSONDecoder().decode([Cuenta].self, from: data){
-                    print([acount].count)
-                   account.id_noCuenta = acount[0].id_noCuenta
-                    account.id_usuario = acount[0].id_usuario
-                    account.saldo = acount[0].saldo
-                    account.tipo = acount[0].tipo
+                if let data = response.data{
+                    print("*****count of cuenta: \(data)")
+//                   account.id_noCuenta = acount[0].id_noCuenta
+//                    account.id_usuario = acount[0].id_usuario
+//                    account.saldo = acount[0].saldo
+//                    account.tipo = acount[0].tipo
                 }
             }
         }
-        return account
+//        return account
     }
     
 }

@@ -11,8 +11,7 @@ import UIKit
 class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
     
     
-     let connection:Connection = Connection()
-    var numCuenta = ""
+   
     override init(frame: CGRect) {
         super.init(frame: frame)
        setUpViews()
@@ -101,7 +100,7 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tableViewCuentas.dequeueReusableCell(withIdentifier: "celdaCustomCuentas") as! celdaCuentas
        
-        celda.lblNoCuenta.text! = numCuenta
+
 
         return celda
     }

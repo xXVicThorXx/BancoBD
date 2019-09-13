@@ -260,7 +260,7 @@ class ViewTransferencia: UIView {
         let label = UILabel()
         label.text = "¿A QUIEN QUIERES TRANSFERIR?"
 //        label.backgroundColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = true
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
    

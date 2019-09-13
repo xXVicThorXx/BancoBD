@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Cuenta: Decodable {
+struct Cuenta: Codable {
     var id_noCuenta:String
     var id_usuario:Int
     var saldo:Double

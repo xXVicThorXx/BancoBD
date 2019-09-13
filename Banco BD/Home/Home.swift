@@ -12,7 +12,8 @@ class Home: UIViewController{
     
     
     let homeView:viewHome = viewHome()
-    let connection:Connection = Connection()
+   let connetion = Connection()
+    var cuenta = Cuenta(id_noCuenta: "", id_usuario: 0, saldo: 0, tipo: 0)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +21,7 @@ class Home: UIViewController{
         self.homeView.btnAñadirTarjeta.action = #selector(funcionBotonesToolbar)
         self.homeView.btnHistorial.action = #selector(funcionBotonesToolbar)
         self.view = homeView
-        connection.logginToHome()
-        self.navigationItem.title = "BANCO"
-        
+
     }
 
     override func viewWillAppear(_ animated: Bool) {

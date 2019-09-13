@@ -12,9 +12,10 @@ import Alamofire
 class Connection {
      let loggin:String = "http://18.218.255.127:3000/api/login"
      let register:String = "http://18.218.255.127:3000/api/register"
-     let acount:String = "http://18.218.255.127:3000/api/createAcount"
+     let createAcount:String = "http://18.218.255.127:3000/api/createAcount"
      let transaction:String = "http://18.218.255.127:3000/api/transaccion"
      let home:String = "http://18.218.255.127:3000/api/home"
+    let acount:String = "http://18.218.255.127:3000/api/acounts"
     let defaultUser = UserDefaults.standard
     
      func loginGetToken(email:String,password:String){
@@ -35,7 +36,15 @@ class Connection {
             if let data = response.data,
                 let token = try? JSONDecoder().decode(AccessToken.self, from: data) {
                 print("*** TOKEN (STRING): \(token.token)")
-                self.defaultUser.set(token.token, forKey: "accessToken")
+                //update token in user defaults
+                
+                if self.defaultUser.value(forKey: "accessToken") == nil{
+                     self.defaultUser.set(token.token, forKey: "accessToken")
+                }else{
+                    self.defaultUser.removeObject(forKey: "accessToken")
+                    self.defaultUser.set(token.token, forKey: "accessToken")
+                }
+                
             }
         }
     }
@@ -63,28 +72,48 @@ class Connection {
         }
     }
     
-     func logginToHome(){
-        let link = home
+//     func logginToHome(){
+//        let link = home
+//        let url = URL(string: link)!
+//        if let token = defaultUser.value(forKey: "accessToken") {
+//          let headers = [ "Authorization": "bearer \(token)" ]
+//            
+//            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON {(response) in
+//                if let data = response.data {
+////                    let msg = String(data: data, encoding: .utf8)
+//                    print("sientra")
+//                    let cuenta = try? JSONDecoder().decode(User.self, from: data)
+//                    print(cuenta!)
+////                    let msg = String(data: data, encoding: .utf8)
+//                    
+////                    print(msg!)
+//                }
+//            }
+//        }
+//    }
+    
+    func loadAcounts() -> Cuenta{
+        
+        var account = Cuenta(id_noCuenta: "", id_usuario: 0, saldo: 0, tipo: 0)
+        
+        let link = acount
         let url = URL(string: link)!
-        if let token = defaultUser.value(forKey: "accessToken") {
-          let headers = [ "Authorization": "bearer \(token)" ]
-            
-            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON {(response) in
-                if let data = response.data,
-                    let cuenta = try? JSONDecoder().decode(User.self, from: data){
-                    print("sientra")
-                    print(cuenta.apellido)
-//                    let msg = String(data: data, encoding: .utf8)
-                    
-//                    print(msg!)
+        if let token = defaultUser.value(forKey: "accessToken"){
+            let headers = [ "Authorization": "bearer \(token)" ]
+            Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                if let data = response.data, let acount = try? JSONDecoder().decode([Cuenta].self, from: data){
+                    print([acount].count)
+                   account.id_noCuenta = acount[0].id_noCuenta
+                    account.id_usuario = acount[0].id_usuario
+                    account.saldo = acount[0].saldo
+                    account.tipo = acount[0].tipo
                 }
-                
             }
-            
         }
-        
-       
-        
+        return account
     }
+    
 }
 
+//,
+//et cuenta = try? JSONDecoder().decode(User.self, from: data)

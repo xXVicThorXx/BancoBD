@@ -61,7 +61,7 @@ class ViewLogin: UIView {
         stackInicioSesion.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         stackInicioSesion.trailingAnchor.constraint(equalTo: imgViewCabecera.trailingAnchor, constant:  -textFieldSidesSeparation).isActive = true
         stackInicioSesion.leadingAnchor.constraint(equalTo: imgViewCabecera.leadingAnchor, constant: textFieldSidesSeparation).isActive = true
-        stackInicioSesion.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2).isActive = true
+        stackInicioSesion.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.3).isActive = true
         
         
         viewCorreo.addSubview(textFieldCorreo)
@@ -89,7 +89,7 @@ class ViewLogin: UIView {
         btnRegistro.widthAnchor.constraint(equalTo: viewBtnRegister.widthAnchor, multiplier:  0.5).isActive = true
         btnRegistro.bottomAnchor.constraint(equalTo: viewBtnRegister.bottomAnchor, constant: -5).isActive = true
         
-        
+
         
         
         btnEye.setImage(UIImage(named: "Closed_Eye"), for: .normal)
@@ -170,6 +170,7 @@ class ViewLogin: UIView {
         imgVIew.image = UIImage(named: "banca")
         imgVIew.contentMode = .scaleAspectFit
         
+        
         imgVIew.translatesAutoresizingMaskIntoConstraints = false
         return imgVIew
     }()
@@ -189,8 +190,8 @@ class ViewLogin: UIView {
         btn.titleLabel?.font = UIFont(name: "Arial", size: 20)
         btn.layer.cornerRadius = 10
         btn.layer.borderWidth = 0.5
-        btn.layer.borderColor = UIColor.lightGray.cgColor
-        
+        btn.layer.borderColor = UIColor.gray.cgColor
+        btn.setTitleColor(.black, for: .normal)
         
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
@@ -201,9 +202,10 @@ class ViewLogin: UIView {
         let btn = UIButton(type: .system)
         btn.setTitle("Registrarse", for: .normal)
         btn.titleLabel?.font = UIFont(name: "Arial", size: 20)
-        //        btn.layer.cornerRadius = 10
-        //        btn.layer.borderWidth = 0.5
-        //        btn.layer.borderColor = UIColor.lightGray.cgColor
+        btn.layer.cornerRadius = 10
+        btn.setTitleColor(.black, for: .normal)
+        btn.layer.borderColor = UIColor.gray.cgColor
+        btn.layer.borderWidth = 0.5
         
         
         btn.translatesAutoresizingMaskIntoConstraints = false
@@ -215,10 +217,7 @@ class ViewLogin: UIView {
         let btn = UIButton(type: .system)
         btn.setTitle("Acerca De", for: .normal)
         btn.titleLabel?.font = UIFont(name: "Arial", size: 20)
-        //        btn.layer.cornerRadius = 10
-        //        btn.layer.borderWidth = 0.5
-        //        btn.layer.borderColor = UIColor.lightGray.cgColor
-        
+
         
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn

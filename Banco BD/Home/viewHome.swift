@@ -77,13 +77,6 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
         //        NOTA: limpiar fondo table view en viewwillapear
         
         
-        self.viewX.addSubview(btnAcercaDe)
-        
-        btnAcercaDe.topAnchor.constraint(equalTo: viewX.topAnchor, constant: 5).isActive = true
-        btnAcercaDe.leadingAnchor.constraint(equalTo: viewX.leadingAnchor, constant: 5).isActive = true
-        btnAcercaDe.trailingAnchor.constraint(equalTo: viewX.trailingAnchor, constant: -5).isActive = true
-        btnAcercaDe.bottomAnchor.constraint(equalTo: viewX.bottomAnchor, constant: -5).isActive = true
-        
         
         
         
@@ -177,22 +170,7 @@ class viewHome: UIView , UITableViewDelegate, UITableViewDataSource{
         
     }()
     
-    
 
-    let btnAcercaDe:UIButton = {
-        let btn = UIButton(type: .system)
-        btn.setTitle("Acerca De", for: .normal)
-        btn.titleLabel?.font = UIFont(name: "Arial", size: 20)
-        //        btn.layer.cornerRadius = 10
-        //        btn.layer.borderWidth = 0.5
-        //        btn.layer.borderColor = UIColor.lightGray.cgColor
-        btn.backgroundColor = .black
-        
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
-        
-    }()
-    
     
     
     

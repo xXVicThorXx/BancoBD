@@ -15,20 +15,18 @@ class Transferencia: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.view = viewTransferencia
-        setUpViews()
+        self.hideKeyboardWhenTappedAround()
+       navigationItem.title = "TRANSFERENCIA"
         
     }
     
-    func setUpViews(){
-       
-        
-        
-    }
 
     
     
 
 
 }
+
+

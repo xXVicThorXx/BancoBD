@@ -20,8 +20,7 @@ class Home: UIViewController{
         self.homeView.btnAñadirTarjeta.action = #selector(funcionBotonesToolbar)
         self.homeView.btnHistorial.action = #selector(funcionBotonesToolbar)
         self.view = homeView
-//     cuenta = connetion.loadAcounts()
- 
+
     }
 
     override func viewWillAppear(_ animated: Bool) {

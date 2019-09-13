@@ -10,7 +10,6 @@ import UIKit
 
 class celdaCuentas: UITableViewCell {
 
-   
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -52,7 +51,7 @@ class celdaCuentas: UITableViewCell {
         stackInfoTarjeta.spacing = 0
         stackInfoTarjeta.distribution = .fillEqually
 
-        self.addSubview(stackInfoTarjeta)
+       
         
         stackInfoTarjeta.leadingAnchor.constraint(equalTo: imgViewCuenta.trailingAnchor, constant: 5).isActive = true
         stackInfoTarjeta.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
@@ -68,11 +67,14 @@ class celdaCuentas: UITableViewCell {
     var nombre:String = "NOMBRE APELLIDO"
     var noCuenta:String = "XXXX XXXX XXXX XXXX"
     
+    
+    
     override func layoutSubviews() {
          super.layoutSubviews()
+        
         lblNombreCuenta.text = nombre
         lblNoCuenta.text = noCuenta
-       
+        
         
     }
     
